@@ -13,7 +13,7 @@ browser.contextMenus.create({
   contexts: ["link"]
 }, onCreated);
 
-function openInNewTab(url){
+function openInNewTab(url){                  // Not Using
   var a = document.createElement("a");
   a.target = "_blank";
   a.href = url ;
@@ -23,7 +23,13 @@ function openInNewTab(url){
 browser.contextMenus.onClicked.addListener((info,tab)=>{
     switch(info.menuItemId){
       case "download":
-          console.log(info.linkUrl);
+          url1 = info.linkUrl.slice(0,12);
+          url2 = info.linkUrl.slice(12);
+          ifitworks = url1 + "ss" + url2;
+          var creating = browser.tabs.create({
+            url : ifitworks
+          });
+          document.getElementsByClassName('def-btn-box').click();
         break;
     }
 });
