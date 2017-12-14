@@ -1,0 +1,18 @@
+{
+
+  "manifest_version": 2,
+  "name": "zigbee",
+  "version": "1.0",
+
+  "description": "Download Videos",
+
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "tabs"
+  ],
+
+  "background": {
+  "scripts": ["background.js"]
+  }
+}
